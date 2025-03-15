@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKYWAY ROOFING LTD.</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">SKYWAY ROOFING</a>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- Mobile phone button in navbar -->
+        <a href="tel:+17802949630" class="btn nav-contact">+1 780-294-9630</a>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Hero Section with Background Video -->
+  <section id="hero">
+    <div class="hero-video-container">
+      <video autoplay muted loop playsinline>
+        <source src="hero-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Your Trusted Roofing Experts</h1>
+        <!-- Instead of linking to an anchor, this button will trigger the modal -->
+        <button id="open-estimate" class="btn">Get a Free Estimate</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Free Estimate Modal (Initially Hidden) -->
+  <div id="estimate-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="close-estimate">&times;</button>
+      <h2>Free Estimate</h2>
+      <!-- Free Estimate Form; update the action URL with your Formspree endpoint -->
+      <form id="estimate-form" action="https://formspree.io/f/mrbpbpeq" method="POST">
+        <div class="form-group">
+          <label for="estimate_lastname">Last Name *</label>
+          <input type="text" id="estimate_lastname" name="last_name" required />
+        </div>
+        <div class="form-group">
+          <label for="estimate_firstname">First Name *</label>
+          <input type="text" id="estimate_firstname" name="first_name" required />
+        </div>
+        <div class="form-group">
+          <label for="estimate_phone">Phone *</label>
+          <input type="tel" id="estimate_phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="estimate_email">Email *</label>
+          <input type="email" id="estimate_email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="estimate_postal">Postal Code *</label>
+          <input type="text" id="estimate_postal" name="postal_code" required />
+        </div>
+        <div class="form-group">
+          <p>1. How old is your home? *</p>
+          <label><input type="radio" name="home_age" value="Newly Developed" required /> Newly Developed</label>
+          <label><input type="radio" name="home_age" value="1-10yrs Old" required /> 1-10yrs Old</label>
+          <label><input type="radio" name="home_age" value="11-20yrs Old" required /> 11-20yrs Old</label>
+          <label><input type="radio" name="home_age" value="30yrs or More" required /> 30yrs or More</label>
+        </div>
+        <div class="form-group">
+          <p>2. When were your existing shingles installed? *</p>
+          <label><input type="radio" name="shingles_installed" value="About 5yrs ago" required /> About 5yrs ago</label>
+          <label><input type="radio" name="shingles_installed" value="About 6-10yrs ago" required /> About 6-10yrs ago</label>
+          <label><input type="radio" name="shingles_installed" value="About 11-15yrs ago" required /> About 11-15yrs ago</label>
+          <label><input type="radio" name="shingles_installed" value="More than 20yrs ago" required /> More than 20yrs ago</label>
+          <label><input type="radio" name="shingles_installed" value="Not too sure" required /> Not too sure</label>
+        </div>
+        <div class="form-group">
+          <p>3. How soon would you like to get your shingles replaced? *</p>
+          <label><input type="radio" name="replacement_timing" value="Within a month" required /> Within a month</label>
+          <label><input type="radio" name="replacement_timing" value="Within 1-3 months" required /> Within 1-3 months</label>
+          <label><input type="radio" name="replacement_timing" value="No immediate rush" required /> No immediate rush</label>
+          <label><input type="radio" name="replacement_timing" value="Just shopping around" required /> Just shopping around</label>
+        </div>
+        <button type="submit" class="btn">Submit Estimate</button>
+      </form>
+      <div id="estimate-status"></div>
+    </div>
+  </div>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="services-cards">
+          <div class="service-card">New roofs installation</div>
+          <div class="service-card">Re-roofs</div>
+          <div class="service-card">Repairs</div>
+          <div class="service-card">Inspections</div>
+          <div class="service-card">Skylight</div>
+          <div class="service-card">Roof cleaning</div>
+          <div class="service-card">Gutter cleaning</div>
+          <div class="service-card">Gutter repair</div>
+          <div class="service-card">Eaves trough</div>
+          <div class="service-card">Attic vents</div>
+          <div class="service-card">Slope roof</div>
+          <div class="service-card">Rubber roofs</div>
+          <div class="service-card">Asphalt shingles</div>
+          <div class="service-card">Shakes</div>
+        </div>
+        <p class="service-note">Serving Edmonton and surrounding areas.</p>
+      </div>
+    </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <div class="container">
+      <h2>Our Portfolio</h2>
+      <div class="portfolio-images">
+        <!-- Duplicate the set of 5 images for seamless looping -->
+        <div class="portfolio-container">
+          <div class="portfolio-item">
+            <img src="portfolio1.jpeg" alt="Portfolio 1" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio2.jpeg" alt="Portfolio 2" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio3.jpeg" alt="Portfolio 3" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio4.jpeg" alt="Portfolio 4" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio5.jpeg" alt="Portfolio 5" />
+          </div>
+          <!-- Duplicate set -->
+          <div class="portfolio-item">
+            <img src="portfolio1.jpeg" alt="Portfolio 1" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio2.jpeg" alt="Portfolio 2" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio3.jpeg" alt="Portfolio 3" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio4.jpeg" alt="Portfolio 4" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio5.jpeg" alt="Portfolio 5" />
+          </div>
+          <!-- Duplicate set 2-->
+          <div class="portfolio-item">
+            <img src="portfolio1.jpeg" alt="Portfolio 1" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio2.jpeg" alt="Portfolio 2" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio3.jpeg" alt="Portfolio 3" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio4.jpeg" alt="Portfolio 4" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio5.jpeg" alt="Portfolio 5" />
+          </div>
+          <!-- Duplicate set 3-->
+          <div class="portfolio-item">
+            <img src="portfolio1.jpeg" alt="Portfolio 1" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio2.jpeg" alt="Portfolio 2" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio3.jpeg" alt="Portfolio 3" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio4.jpeg" alt="Portfolio 4" />
+          </div>
+          <div class="portfolio-item">
+            <img src="portfolio5.jpeg" alt="Portfolio 5" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  
+  <!-- Why Choose Us Section -->
+  <section id="why-choose-us">
+    <div class="container">
+      <h2>Why Choose Us</h2>
+      <div class="why-cards">
+        <div class="why-card">Fast and reliable roofing services</div>
+        <div class="why-card">Custom roofing solutions</div>
+        <div class="why-card">Owner and workers are background checked</div>
+        <div class="why-card">Best insurance</div>
+        <div class="why-card">WCB insured</div>
+        <div class="why-card">Safety certificate</div>
+        <div class="why-card">Fall protection</div>
+        <div class="why-card">First aid certification</div>
+        <div class="why-card">Experienced workers</div>
+      </div>
+    </div>
+  </section>
+    
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        At SKYWAY, we are committed to delivering fast, reliable, and custom roofing solutions for Edmonton residents. 
+      </p>
+      <p>Our experienced team provides quality workmanship with a focus on safety and customer satisfaction.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <!-- Contact Form; update the action URL with your Formspree endpoint -->
+      <form id="contact-form" action="https://formspree.io/f/mblglgra" method="POST">
+        <div class="form-group">
+          <label for="contact_lastname">Last Name *</label>
+          <input type="text" id="contact_lastname" name="last_name" required />
+        </div>
+        <div class="form-group">
+          <label for="contact_firstname">First Name *</label>
+          <input type="text" id="contact_firstname" name="first_name" required />
+        </div>
+        <div class="form-group">
+          <label for="contact_phone">Phone *</label>
+          <input type="tel" id="contact_phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="contact_email">Email *</label>
+          <input type="email" id="contact_email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="contact_message">Message *</label>
+          <textarea id="contact_message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+      <div id="form-status"></div>
+      
+      <div class="contact-details">
+        <h3>SKYWAY ROOFING LTD.</h3>
+        <p><strong>Address:</strong> 2131 13 Ave NW, Edmonton, AB T6T 2R6</p>
+        <p><strong>Phone:</strong> <a href="tel:+17802949630">780-294-9630</a></p>
+        <p><strong>Email:</strong> <a href="mailto:Skywayroofing@yahoo.com">Skywayroofing@yahoo.com</a></p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 SKYWAY ROOFING . All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
